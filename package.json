@@ -36,9 +36,7 @@
     "babel-preset-react-app": "^9.1.2",
     "camelcase": "^5.3.1",
     "case-sensitive-paths-webpack-plugin": "2.3.0",
-    "core-js": "^3.6.5",
     "css-loader": "3.4.2",
-    "cucumber-html-reporter": "^5.2.0",
     "dotenv": "8.2.0",
     "dotenv-expand": "5.1.0",
     "enzyme": "^3.11.0",
@@ -57,7 +55,6 @@
     "html-webpack-plugin": "4.0.0-beta.11",
     "identity-obj-proxy": "3.0.0",
     "jest": "^25.1.0",
-    "jest-cucumber": "^3.0.0",
     "jest-environment-jsdom-fourteen": "1.0.1",
     "jest-enzyme": "^7.1.2",
     "jest-resolve": "24.9.0",
@@ -67,7 +64,6 @@
     "mini-css-extract-plugin": "0.9.0",
     "node-sass": "^4.14.1",
     "npm-run-all": "^4.1.5",
-    "object-assign": "^4.1.1",
     "optimize-css-assets-webpack-plugin": "5.0.3",
     "pnp-webpack-plugin": "1.6.4",
     "postcss-flexbugs-fixes": "4.1.0",
@@ -93,7 +89,6 @@
     "webpack": "4.42.0",
     "webpack-dev-server": "3.10.3",
     "webpack-manifest-plugin": "2.2.0",
-    "whatwg-fetch": "^3.2.0",
     "workbox-webpack-plugin": "4.3.1"
   },
   "scripts": {
@@ -102,9 +97,8 @@
     "watch:css": "npm run build:css && node-sass src/ -o src/ -w",
     "start": "npm run build:css && node scripts/start.js",
     "build": "npm run build:css && node scripts/build.js",
-    "local:build": "npm run build && serve -s build",
-    "test": "node scripts/test.js",
-    "test:coverage": "npm test -- --coverage"
+    "build:serve": "npm run build && serve -s build",
+    "test": "node scripts/test.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -116,6 +110,7 @@
       "not op_mini all"
     ],
     "development": [
+      "ie 11",
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
