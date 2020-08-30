@@ -39,6 +39,7 @@
     "css-loader": "3.4.2",
     "dotenv": "8.2.0",
     "dotenv-expand": "5.1.0",
+    "env-cmd": "^10.1.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "enzyme-to-json": "^3.5.0",
@@ -96,7 +97,11 @@
     "build:css": "node-sass src/ -o src/",
     "watch:css": "npm run build:css && node-sass src/ -o src/ -w",
     "start": "npm run build:css && node scripts/start.js",
+    "start:staging": "env-cmd -f .env.staging npm run start",
+
     "build": "npm run build:css && node scripts/build.js",
+    "build:staging": "env-cmd -f .env.staging npm run build",
+
     "build:serve": "npm run build && serve -s build",
     "test": "node scripts/test.js"
   },

@@ -2,7 +2,11 @@ import React from 'react';
 
 const App = props => {
 
-    return <h1>React App Template</h1>;
+    return <React.Fragment>
+        <h1>React App Template</h1>
+        <p>App Version: <strong>{process.env.REACT_APP_VERSION}</strong></p>
+        <p>Environment: <strong>{process.env.REACT_APP_ENV}</strong></p>
+    </React.Fragment>;
 
 };
 
